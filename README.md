@@ -2,7 +2,7 @@
 
 Основная задача:  Получить 10 последних записей о погоде в Казани.
 
-Есть три сервиса: ServiceA, ServiceB, ServiceC. В проекте используется Apache Kafka, gRPC, PostgreSQL, GraphQL
+Есть три сервиса: ServiceA, ServiceB, ServiceC. В проекте используется Apache Kafka, gRPC, PostgreSQL, GraphQL.
 
 ## Архитектура системы сбора данных о погоде 
 ```mermaid
