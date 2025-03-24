@@ -4,6 +4,7 @@
 
 Есть три сервиса: ServiceA, ServiceB, ServiceC. В проекте используется Apache Kafka, gRPC, GraphQL
 
+## Архитектура системы сбора данных о погоде 
 ```mermaid
 graph TD
     subgraph Kafka
