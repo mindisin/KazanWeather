@@ -1,0 +1,32 @@
+version: '3.4'
+
+services:
+  servicea:
+    image: ${DOCKER_REGISTRY-}servicea
+    build:
+      context: .
+      dockerfile: ServiceA/Dockerfile
+
+  serviceb:
+    image: ${DOCKER_REGISTRY-}serviceb
+    build:
+      context: .
+      dockerfile: ServiceB/Dockerfile
+    environment:
+        GrpcOptions__Services__0__Name: "File"
+        GrpcOptions__Services__0__ServerUri: "http://weather:81"
+  #   ports:
+  # - 81:5112
+
+
+  servicec:
+    image: ${DOCKER_REGISTRY-}servicec
+    build:
+      context: .
+      dockerfile: ServiceC/Dockerfile
+    environment:
+      KestrelOptions__Options__0__EndpointType: Rest
+      KestrelOptions__Options__0__Port: 5111
+      KestrelOptions__Options__1__EndpointType: Grpc
+      KestrelOptions__Options__1__Port: 5112
+

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option csharp_namespace = "ServiceB";
+
+package set_weather;
+
+// The greeting service definition.
+service SetWeatherService{
+  // Sends a greeting
+  rpc SetWeather (WeatherRequest) returns (VoidMessage);
+}
+
+// The request message containing the user's name.
+// Данные, которые получим от клиента
+message WeatherRequest {
+  float wind_speed = 1;
+  float temperature = 2;
+  float temperature_feels_like = 3;
+  sint32 description = 4;
+}
+
+// The response message containing the greetings.
+//Посылаем клиенту в ответ
+message VoidMessage {
+}
